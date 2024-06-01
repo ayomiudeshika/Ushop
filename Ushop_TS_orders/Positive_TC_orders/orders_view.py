@@ -1,34 +1,31 @@
+#PASS
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver.implicitly_wait(10)
+
 
 def login():
     OTP="9774"
     driver.get("https://uat.ushop.lk/")
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[1]/div[1]/div[1]/div/button').click()
-    time.sleep(2)
     driver.find_element(By.XPATH, '//*[@id="phone-no"]').send_keys("767778194")
-    time.sleep(2)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
-    time.sleep(20)
     driver.find_element(By.XPATH, '//*[@id="phone-no"]').send_keys("OTP")
-    time.sleep(10)
+    time.sleep(20)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
-    time.sleep(10)
-    driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div[2]/button').click()
-    time.sleep(2)
-    driver.find_element(By.XPATH,'//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[2]').click()
-    time.sleep(2)
 
-def createItem():
-    driver.find_element(By.LINK_TEXT,'Manage Items').click()
+
+def view_orders():
+    driver.find_element(By.XPATH,'//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[1]').click()
+    time.sleep(5)
+
 
 login()
-time.sleep(2)
-#createItem()
-time.sleep(2)
+view_orders()
 driver.close()

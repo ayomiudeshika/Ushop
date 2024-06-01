@@ -14,8 +14,14 @@ def invalidOTP():
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
     time.sleep(20)
     driver.find_element(By.XPATH, '//*[@id="phone-no"]').send_keys("0000")
-    time.sleep(10)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
+    time.sleep(10)
+
+    #alert = driver.switch_to.alert
+
+    # Get the text of the alert
+    #alert_text = alert.text
+    #print("Alert text:", alert_text)
 
 
 
