@@ -23,11 +23,23 @@ def privacyPolicy():
     driver.maximize_window()
     driver.find_element(By.LINK_TEXT,"Privacy Policy").click()
 
+def getStarted():
+    driver.get("https://uat.ushop.lk/")
+    driver.maximize_window()
+    driver.find_element(By.XPATH,"//button[normalize-space()='Get Started']").click()
+    time.sleep(2)
+
+
 aboutUs()
 time.sleep(2)
 termsOfService()
 time.sleep(2)
 privacyPolicy()
 time.sleep(2)
-driver.close() #close only one browser at a time.
+getStarted()
+time.sleep(2)
+driver.close()
+print('SUCCESSFULLY EXECUTED!')
+
+#close only one browser at a time.
 #driver.quit() close all the browsers.

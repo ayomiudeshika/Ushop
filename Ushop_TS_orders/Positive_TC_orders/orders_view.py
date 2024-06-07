@@ -30,3 +30,4 @@ def view_orders():
 login()
 view_orders()
 driver.close()
+print("SUCCESSFULLY EXECUTED")
