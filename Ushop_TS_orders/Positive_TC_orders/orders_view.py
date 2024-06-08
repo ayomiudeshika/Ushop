@@ -8,6 +8,7 @@ import time
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.implicitly_wait(10)
+driver.maximize_window()
 
 
 def login():
