@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
-driver.implicitly_wait(10)
+#driver.implicitly_wait(10)
 
 
 def login():
