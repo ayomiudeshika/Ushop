@@ -33,6 +33,6 @@ def item_filters():
 
 
 item_filters()
-time.sleep(2)
+time.sleep(5)
 driver.quit()
 print('SUCCESSFULLY EXECUTED!')
