@@ -26,7 +26,7 @@ def login():
 def add_Item():
     add_item_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[1]')))
     add_item_button.click()
-    time.sleep(5
+    time.sleep(5)
 
 #check item table
 #Check catalog
