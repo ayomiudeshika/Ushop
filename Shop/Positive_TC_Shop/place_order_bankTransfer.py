@@ -90,7 +90,8 @@ def place_order():
     next2 = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div[3]/div/button[2]')))
     next2.click()
 
-    #Check whether the bank details correct
+    #Check whether the bank details correct here
+
     done = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div/div[3]/button')))
     done.click()
     send_via_wtsapp = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/div/div/button')))
