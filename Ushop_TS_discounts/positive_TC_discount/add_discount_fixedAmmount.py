@@ -30,7 +30,7 @@ def add_discount():
     add_new = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div/div[1]/a')))
     add_new.click()
     discount_name = wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="discount-name"]')))
-    discount_name.send_keys("Summer Sale")
+    discount_name.send_keys("Summer Sale 01")
 
     discount_code = wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="discount_code"]')))
     discount_code.send_keys("SS001")
