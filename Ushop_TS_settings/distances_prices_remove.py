@@ -29,13 +29,13 @@ def remove_distances_prices():
     distances_prices = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="distance-tab-example"]')))
     distances_prices.click()
 
-    def cancel_close_delete(XPATH,wait):
+    def cancel_close_delete(xpath,wait):
 
-        for _ in range(3):  # retry upto 5 items
+        for _ in range(3):  # retry upto 3 items
             try:
                 bin = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="distance-example"]/div/div/div[2]/table/tbody/tr[2]/td[3]/i')))
                 bin.click()
-                actions = wait.until(EC.visibility_of_element_located((By.XPATH, wait)))
+                actions = wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
                 driver.execute_script("arguments[0].scrollIntoView(true);", actions)
                 actions.click()
                 time.sleep(5)
@@ -45,7 +45,13 @@ def remove_distances_prices():
                 pass  # Retry the loop if exception occurs
 
     cancel_close_delete('//*[@id=":r2:"]/div/div/div/div/button[1]', wait)
-    cancel_close_delete('//*[@id=":r2:"]/div/div/button/svg', wait)
+    cancel_close_delete('//*[@id=":r2:"]/div/div/button', wait)
+    # // *[ @ id = ":r2:"] / div / div / button
+    # // *[ @ id = ":r2:"] / div / div / button / svg / path
+    # // *[ @ id = ":r2:"] / div / div / button
+    # // *[ @ id = ":r2:"] / div / div / button / svg
+    # // *[ @ id = ":r2:"] / div / div / button
+
     cancel_close_delete('//*[@id=":r2:"]/div/div/div/div/button[2]', wait)
 
 login()
