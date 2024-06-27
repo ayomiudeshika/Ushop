@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
-
+driver.maximize_window()
 
 def login():
     OTP="9774"
@@ -43,6 +43,7 @@ def add_discount():
 
     discount_amount_fixed = wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="dicount"]')))
     discount_amount_fixed.send_keys("10")
+    time.sleep(2)
 
     save = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div/form/div[3]/button')))
     save.click()

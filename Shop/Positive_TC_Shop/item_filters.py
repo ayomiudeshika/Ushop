@@ -13,7 +13,7 @@ driver.maximize_window()
 
 def item_filters():
     wait = WebDriverWait(driver, 10)
-    driver.get("https://uat.ushop.lk/sam")
+    driver.get("https://uat.ushop.lk/sam01")
 
     # Define a helper function to click an element with retry logic
     #Retry Mechanism: Added a helper function click_element with retry logic to handle StaleElementReferenceException.

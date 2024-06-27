@@ -10,9 +10,9 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
-#PASS
+
 def login_shop():
-    driver.get("https://uat.ushop.lk/sam")
+    driver.get("https://uat.ushop.lk/sam01")
 
 def add_to_cart():
     wait = WebDriverWait(driver, 10)

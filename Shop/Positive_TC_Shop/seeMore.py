@@ -11,7 +11,7 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 driver.maximize_window()
 
 def login_shop():
-    driver.get("https://uat.ushop.lk/sam")
+    driver.get("https://uat.ushop.lk/sam01")
 
 def see_more():
     wait = WebDriverWait(driver, 10)

@@ -13,7 +13,7 @@ driver.maximize_window()
 
 
 def login_shop():
-    driver.get("https://uat.ushop.lk/sam")
+    driver.get("https://uat.ushop.lk/sam01")
 
 
 def add_to_cart():
