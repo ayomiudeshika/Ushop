@@ -25,13 +25,11 @@ def signup():
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
     time.sleep(2)
 
-    #upload logo and banner here.
-
     store_name = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="store-name"]')))
     store_name.send_keys("Anu closet")
 
-    store_URL = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="store-url"]')))
-    store_URL.send_keys("Anu")
+    # store_URL = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="store-url"]')))
+    # store_URL.send_keys("Anu")
 
     whatsapp_no = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="whats-app"]')))
     driver.execute_script("arguments[0].scrollIntoView(true);", whatsapp_no)

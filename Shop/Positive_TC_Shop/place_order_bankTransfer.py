@@ -57,12 +57,10 @@ def place_order():
     # Delivery details
     # radio button
 
-    status = driver.find_element(By.XPATH,
-                                 '//*[@id="Bank Transfer"]').is_selected()  # true/faulse-not selected by default
+    status = driver.find_element(By.XPATH,'//*[@id="Bank Transfer"]').is_selected()  # true/faulse-not selected by default
     print(status)
     driver.find_element(By.XPATH, '//*[@id="Bank Transfer"]').click()  # select raio button.
-    status = driver.find_element(By.XPATH,
-                                 '//*[@id="Bank Transfer"]').is_selected()  # true/faulse-not selected by default
+    status = driver.find_element(By.XPATH,'//*[@id="Bank Transfer"]').is_selected()  # true/faulse-not selected by default
     print(status)
 
     # dropdown menu

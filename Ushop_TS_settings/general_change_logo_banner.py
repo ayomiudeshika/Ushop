@@ -1,15 +1,20 @@
+import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, NoSuchWindowException
 from selenium.webdriver.support import expected_conditions as EC
+#from selenium.common.exceptions import NoSuchWindowException
+
 #from selenium.common.exceptions import StaleElementReferenceException
 
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
+driver.maximize_window()
 
 
 def login():
@@ -23,17 +28,35 @@ def login():
     time.sleep(20)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
 
-def save_empty_mandatory_fields():
-    settings = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[5]')))
+def upload_files():
+    settings = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[5]')))
     settings.click()
 
-    #photo upload from the device
-    logo = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="general-example"]/div/form/div[1]/div[1]/div[1]/div/div/button')))
-    logo.click()
-    file_path_01 = "F:\downloads\download.png"
-    file_input.send_keys(file_path_01)
 
+    # Wait for the logo input field to be visible and upload the logo
+    logo_input = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="general-example"]/div/form/div[1]/div[1]/div[1]/div/div/button')))  # Replace with the actual XPath
+    logo_input.send_keys(r"F:\downloads\logo02.jpg")  # Replace with the actual file path
+
+    # Wait for the banner input field to be visible and upload the banner
+    banner_input = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="general-example"]/div/form/div[1]/div[1]/div[2]/div/div/button')))  # Replace with the actual XPath
+    banner_input.send_keys(r"F:\downloads\Banner02.jpg")  # Replace with the actual file path
+    time.sleep(5)
 
     save = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="general-example"]/div/form/div[2]/button')))
     driver.execute_script("arguments[0].scrollIntoView(true);", save)
     save.click()
+    time.sleep(5)
+
+try:
+    upload_files()
+except selenium.common.exceptions.NoSuchWindowException as e:
+    print(f"Window closed unexpectedly: {e}")
+finally:
+    # Add a sleep to see the result if needed
+    time.sleep(5)
+
+
+login()
+upload_files()
+driver.quit()
+print("SUCCESSFULLY EXECUTED!")

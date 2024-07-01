@@ -25,8 +25,6 @@ def signup():
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
     time.sleep(2)
 
-    #upload logo and banner here.
-
     store_name = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="store-name"]')))
     store_name.send_keys("Anu closet")
 
@@ -41,10 +39,10 @@ def signup():
     driver.execute_script("arguments[0].scrollIntoView(true);", address)
     address.send_keys("123, Batuwatta, Ragama.")
 
-    description = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="description"]')))
-    driver.execute_script("arguments[0].scrollIntoView(true);", description)
-    description.send_keys(
-        " Closet by Anu is an exclusive ladies' formalwear brand that offers power-dressing essentials that bring out the 'Boss lady' in every woman")
+    # description = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="description"]')))
+    # driver.execute_script("arguments[0].scrollIntoView(true);", description)
+    # description.send_keys(
+    #     " Closet by Anu is an exclusive ladies' formalwear brand that offers power-dressing essentials that bring out the 'Boss lady' in every woman")
 
     next_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div[2]/button')))
     next_button.click()
