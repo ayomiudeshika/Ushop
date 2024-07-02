@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
+driver.maximize_window()
 
 
 def login():
@@ -42,14 +43,14 @@ def add_Item():
     drop_down.select_by_visible_text("Unit")
 
     #visibility radio button
-    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').is_selected()  # true/faulse-not selected by default
+    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').is_selected()  # true/false-not selected by default
     print(status)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[3]/label/div').click()  # select raio button.
-    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[3]/label/div').is_selected()  # true/faulse-not selected by default
+    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[3]/label/div').is_selected()  # true/false-not selected by default
     print(status)
 
     #Availability radio button
-    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').is_selected()  # true/faulse-not selected by default
+    status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').is_selected()  # true/false-not selected by default
     print(status)
     driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').click()  # select raio button.
     status = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[1]/form/div[2]/div/div[4]/label/div').is_selected()  # true/false-not selected by default
