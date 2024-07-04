@@ -24,6 +24,7 @@ def item_filters():
                 driver.execute_script("arguments[0].scrollIntoView(true);", element)
                 element.click()
                 break  # Exit the loop if successful
+                time.sleep(2)
             except StaleElementReferenceException:
                 pass  # Retry the loop if exception occurs
 

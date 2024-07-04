@@ -11,6 +11,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
+driver.maximize_window()
 
 
 def login():
