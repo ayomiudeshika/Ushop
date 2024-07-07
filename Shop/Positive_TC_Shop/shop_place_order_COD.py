@@ -52,7 +52,7 @@ def place_order():
     last_name = wait.until(EC.presence_of_element_located((By.NAME,'last_name') ))
     last_name.send_keys("Perera")
     contact_no = wait.until(EC.presence_of_element_located((By.NAME,'contact_no') ))
-    contact_no.send_keys("0719471609")
+    contact_no.send_keys("0719471608")
     contact_no_secondary = wait.until(EC.presence_of_element_located((By.NAME,'contact_no_secondary') ))
     contact_no_secondary.send_keys("0117896332")
 

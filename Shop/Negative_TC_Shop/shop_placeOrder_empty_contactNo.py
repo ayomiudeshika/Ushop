@@ -10,13 +10,12 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
+wait = WebDriverWait(driver, 10)
 
 def login_shop():
     driver.get("https://uat.ushop.lk/sam01")
 
 def add_to_cart():
-    wait = WebDriverWait(driver, 10)
-
     # increment(+)
     add_item2 = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div[2]/div[4]/div/div[2]/div/div[3]/div/div/button[2]')))
     #scrolling to the element
@@ -34,7 +33,6 @@ def add_to_cart():
     remove_item2.click()
 
 def place_order():
-    wait = WebDriverWait(driver, 10)
     cart = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div[2]/div[4]/div[2]/div/button[2]')))
     #cart = driver.find_element(By.XPATH,'//*[@id="body"]/body/div[1]/div[2]/div[4]/div[2]/div/button[2]')
     cart.click()
@@ -88,8 +86,6 @@ def place_order():
     comments.send_keys("This is my first order, and I hope you will deliver my package as soon as possible and safely")
     next2 = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div[3]/div/button[2]')))
     next2.click()
-    send_via_wtsapp = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div/div/div/button')))
-    send_via_wtsapp.click()
 
 
 login_shop()

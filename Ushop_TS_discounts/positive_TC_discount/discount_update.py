@@ -24,32 +24,35 @@ def login():
     time.sleep(20)
     driver.find_element(By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/form/div/button').click()
 
-def update_discount():
+def change_discount_data():
     discount = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/nav[1]/div[1]/div/div[3]/div[1]/a[3]')))
     discount.click()
+    discount_name = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/div/div[4]/div/div[1]/a')))
+    discount_name.click()
 
-    def empty_mandatory_fields(xpath, wait):
+    discount_name = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="discount-name"]')))
+    discount_name.clear()
+    discount_name.send_keys("Update01")
 
-        for _ in range(3):  # retry upto 5 items
-            try:
-                discount_name = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/div[2]/div/div[4]/div/div[1]/a')))
-                discount_name.click()
-                mandatory_field = wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
-                driver.execute_script("arguments[0].scrollIntoView(true);", mandatory_field)
-                mandatory_field.clear()
-                save = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/form/div[3]/button[1]')))
-                save.click()
-                time.sleep(5)
-                driver.back()
-                break  # Exit the loop if successful
-            except StaleElementReferenceException:
-                pass  # Retry the loop if exception occurs
+    discount_code = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="discount_code"]')))
+    discount_code.clear()
+    discount_code.send_keys("U001")
 
-    empty_mandatory_fields('//*[@id="discount-name"]', wait)
-    empty_mandatory_fields('//*[@id="discount_code"]', wait)
-    empty_mandatory_fields('//*[@id="dicount"]', wait)
+    # discount items entering field should be here.
+    # calender
+    # start_date = wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="start-date"]')))
+    # start_date.send_keys("06132024")
+
+    discount_amount_fixed = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="dicount"]')))
+    discount_amount_fixed.send_keys("8")
+
+    save = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="body"]/body/div[1]/div/form/div[3]/button')))
+    save.click()
+    time.sleep(5)
+
 
 login()
-update_discount()
-driver.quit()
-print("SUCCESSFULLY EXECUTED! ")
+change_discount_data()
+driver.close()
+print("SUCCESSFULLY EXECUTED!")
+

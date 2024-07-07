@@ -88,8 +88,6 @@ def place_order():
     comments.send_keys("This is my first order, and I hope you will deliver my package as soon as possible and safely")
     next2 = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div[3]/div/button[2]')))
     next2.click()
-    send_via_wtsapp = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="body"]/body/div[1]/div/div/div/button')))
-    send_via_wtsapp.click()
 
 
 login_shop()
