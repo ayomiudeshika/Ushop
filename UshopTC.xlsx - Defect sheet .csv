@@ -1,0 +1,243 @@
+Defect ID,Module,Summary,Priority,Assignee,Affect Version,Environment,Steps to Recreate,Expected Results,Actual Results,Status
+Ushop_001,Signup,Text in OTP code requesting page,Low,Mr. Sanjeewa,V.0.0.1,Testing,1.Enter the URL,Requesting 4 digit code,Requesting 5 digit code.,Done
+,,,,,,,2.Access the URL from any browser,,,
+,,,,,,,3.Click on signup button,,,
+,,,,,,,4. Enter mobile number,,,
+,,,,,,,5.Click on confirm button,,,
+Ushop_002,Signin,Signing into an account with valid credentials,Medium,Mr. Sanjeewa,V.0.0.1,Testing,1.Enter URL.,User should be navigated to the home page.,User navigated to the store information page.,Done
+,,,,,,,2.Click on signin button.,,,
+,,,,,,,3.Enter mobile number.,,,
+,,,,,,,4.Click on confirm button.,,,
+Ushop_003,Signin,Signing into an account with invalid credentials,High,Mr. Sanjeewa,V.0.0.1,Testing,1.Enter URL,User should be received an error message for invalid credentials and ask for signup if want.,"Sending an OTP code to that mobile number and navigate to store information page for creating a new store without asking for signup. Gives error message ""Invalid credentials""only after tring again for the OTP.",To do
+,,,,,,,2.Click on signin button.,,,
+,,,,,,,3.Enter mobile number.,,,
+,,,,,,,4.Click on confirm button.,,,
+Ushop_004,Manage Item,Switching to the manage item page.,High,Mr. Sanjeewa,V.0.0.1,Testing,1.Enter valid URL,User should be navigated to manage item page.,"It loads Mobile number requesting page include in login function rather than loading ""manage item""page. (not always) ",Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" ",,,
+Ushop_005,Discount,Discount status in discount table,Medium,Mr. Sanjeewa,V.0.0.1,Testing,1.Enter valid URL,Discount status should be updated immediately,The discount status remain pending while discounts ongoing.,To do
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Discount"" ",,,
+,,,,,,,4.Click on add new button,,,
+,,,,,,,5.Create discount,,,
+,,,,,,,6.Click on save.,,,
+Ushop_006,Discount,Create a new discount without entering a discount name,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to create a discount.,Creating a new discount while remaining that field null.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Discount"" ",,,
+,,,,,,,4.Click on add new button,,,
+,,,,,,,5. Give discount information missing a discount name,,,
+,,,,,,,6.Click on save.,,,
+Ushop_007,Discount ,Create a new discount without entering a discount code,Medium,,V.0.0.1,Testing ,1.Enter valid URL,User should not be able to create a discount.,Creating a new discount while remaining that field null.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Discount"" ",,,
+,,,,,,,4.Click on add new button,,,
+,,,,,,,5. Give discount information missing a discount code,,,
+,,,,,,,6.Click on save.,,,
+Ushop_008,Disount,Adding a discount percentage,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be able to add discounts in percentage,Discount has added as an fixed amount. ,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Discount"" ",,,
+,,,,,,,4.Click on add new button,,,
+,,,,,,,5. Give discount information including discount a discount percentage.,,,
+,,,,,,,6.Click on save.,,,
+Ushop_009,Discount,Updating discounts,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be navigated to discount information previously provided and should allow to edit required fields,Navigated to create a new discount. Need to fill all fields again.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Discount"" ",,,
+,,,,,,,4.Click on discount name,,,
+Ushop_010,Manage Items,Updating item information,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be navigated to saved item information and should allow to edit required fields,Navigated to create a new item. Need to fill all fields again.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""Manage items"" ",,,
+,,,,,,,"4.Click on, item name",,,
+Ushop_011,Manage Items,Creating a new item missing the item name,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to create a item and should give an error message,A new item created and added to the table,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" tab.",,,
+,,,,,,,4.Click on add item button.,,,
+,,,,,,,5.Enter valid item information without item name,,,
+,,,,,,,6.Click on Submit item button.,,,
+Ushop_012,Manage Items,Creating a new item missing the item price,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to create a item and should give an error message,A new item created and added to the table,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" tab.",,,
+,,,,,,,4.Click on add item button.,,,
+,,,,,,,5.Enter valid item information without item price,,,
+,,,,,,,6.Click on Submit item button.,,,
+Ushop_013,Manage Items,Creating a new item missing the quantity,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to create a item and should give an error message,A new item created and added to the table,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" tab.",,,
+,,,,,,,4.Click on add item button.,,,
+,,,,,,,5.Enter valid item information without item quantity,,,
+,,,,,,,6.Click on Submit item button.,,,
+Ushop_014,Manage Items,Manage categories- Delete categories,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be able to delete the categories from the search list. A pop up message to make confirm the deletion,"Delete confirmation message did not pop up. It can see only after removing the existing dialoge box. Any option include in that message(Cancel, delete, remove) do not work.",Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" tab.",,,
+,,,,,,,4.Click on item name.,,,
+,,,,,,,5.Click on manage categories,,,
+,,,,,,,6.Click on delete icon.,,,
+Ushop_015,Settings,Inserting distances and prices,Medium,,V.0.0.1,Testing,,User should be able to add distances and prices to the table,"The entered data do not add to the table although give the message ""create successfully""",Done
+Ushop_016,Settings: Payment option,Adding bank details missing any mandatory detail,Medium,,V.0.0.1,Testing,,User should not able to save bank detail without entering any mandatory field,"Give popup message ""successfully created"" for every click on save button in case of missing mandatory fields and in case of not providing any detail",To do
+Ushop_017,Logout,Logging out from the system,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be able to successfully logged out from the system.,Unable to logout from the system. It navigates to login again,To do
+,,,,,,,2.Login to the system,,,
+,,,,,,,3.Click on logout tab,,,
+Ushop_018,Landing Page,Get started button,Medium,,V.0.0.1,Testing,1.Enter the URL,User should navigated to signup or service demo,Button is not working,Done
+,,,,,,,2.Access the URL from any browser,,,
+,,,,,,,3.Click on Get started button,,,
+Ushop_019,Manage Item,Repeat item name,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to create many items in same name. The item name should be unique,It allows to create number of items using same name.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items"" tab.",,,
+,,,,,,,4.Click on add item button.,,,
+,,,,,,,5.Enter valid item information and a used item name,,,
+,,,,,,,6.Click on Submit item button.,,,
+Ushop_020,Manage Items,Filter by availability,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should be able to filter instock items and out of stock items seperately,Do not filter the items according to availability.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""manage items""  tab",,,
+,,,,,,,4.Click on in stock/ out of stock filter,,,
+,,,,,,,5.Click on apply button,,,
+Ushop_021,Settings,General- Save store information missing store description(mandatory,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not able to save store information and should give an error message,"User can save store information missing store description(mandatory) . Gives the popup message "" Item created successfully""",Done
+,,,,,,,2.Login to the system,,,
+,,,,,,,"3.Click on ""Settings""",,,
+,,,,,,,4.Click on general,,,
+,,,,,,,5.Remove store description ,,,
+,,,,,,,6.Save,,,
+Ushop_022,Settings,General- Save store information missing address(mandatory),Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not able to save store information.should giive an error message.,"User can save store information missing address. Gives the message "" Item created successfully""",Done
+,,,,,,,2.Login to the system,,,
+,,,,,,,"3.Click on ""Settings""",,,
+,,,,,,,4.Click on general,,,
+,,,,,,,5.Remove store address,,,
+,,,,,,,7.Save,,,
+Ushop_023,Settings,General- Sav store information missing store name,Medium,,V.0.0.1,Testing,1.Enter valid URL,User should not be able to save store information and should give an error message.,User can save store information while missing store name,Done
+,,,,,,,2.Login to the system,,,
+,,,,,,,"3.Click on ""Settings""",,,
+,,,,,,,4.Click on general,,,
+,,,,,,,5.Remove store address,,,
+,,,,,,,7.Save,,,
+Ushop_024,Place order:Discounts,Discount amount should be deducted from the subtotal and give the final price,Medium,,V.0.0.1,Testing,1. Enter the valid shop URL.,Discount amount should be deducted from the subtotal and give the final price,Discount amount do not deduct from the subtotal and gives an error message.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,3.Add items to the cart,,,
+,,,,,,,4.Go to the cart.,,,
+,,,,,,,5. Apply the discount code,,,
+Ushop_025,Orders,Order receipt,Medium,,V.0.0.1,Testing,1.Enter valid URL,Order receipt should be contained order details and customer details provided by the customer when placing the order.,Order receipt do not contain the order details and customer details provided by the customer,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""orders""  tab",,,
+,,,,,,,4.Click on existing order status.,,,
+Ushop_026,Place orders,"""See more "" option in item descritio",Medium,,V.0.0.1,Testing,1.Enter valid shop URL,Should give item description and further details about the item.,Do not give any further details when go throuh that link. Just an empty dialogue box.,Done
+,,,,,,,2.Login to the system.,,,
+,,,,,,,"3.Click on ""See more"" link under the necessery item.",,,
+Usop_027,Register,URL Placeholder,Medium,,V.0.0.1,Testing,1. Enter valid URL,The placeholder text should include only simple letters.,"It includes ""Saman-Handy-Crafts"" as the placeholder text",Done
+,,,,,,,2.Go to store register page,,,
+Ushop_028,Register,Whatsapp number field,Medium,,V.0.0.1,Testing,1. Enter valid URL,Mobile no fields should be able to enter 10/09 digits and should avoid special characters,"It can contain large number of digits and some special characters like "".-+""",Done
+,,,,,,,2.Go to store register page,,,
+Ushop_029,Manage Items,Add Items,Medium,,V.0.0..1,Testing,1.Enter valid URL,The page title appears as Edit Item.,Edit item option appears under create item title,To do
+,,,,,,,2.Login to the system,,,
+,,,,,,,3.Click on a item to be edited.,,,
+,,,,,,,4.It direct to edit item under create item title.,,,
+Ushop_030,Signup: Register,Mobile number fields,Medium,,V.0.0.1,Testing,1.Enter valid URL,The optional mobile number and the whatsapp number should be in a same format,Optional mobile number field auto filled without 0 as the first digit while the place holder test in whatsapp number field indicates 0.,To do
+,,,,,,,2.Give a valimobile number,,,
+,,,,,,,3.Enter the OTP.,,,
+,,,,,,,4.The store registration page,,,
+Ushop_031,Signin,Wrong notification for succesful signin.,Medium,,V.0.0.1,Testing,Enter URL.,"It should give the notification ""Successfully signed in"".","Gives the notification ""Successfully signed up!"" for successful signing.",Done
+,,,,,,,Access the URL from any browser.,,,
+,,,,,,,Click on signin button,,,
+,,,,,,,Enter mobile number.,,,
+,,,,,,,Click on confirm button.,,,
+,,,,,,,Enter OTP,,,
+,,,,,,,Click on confirm button.,,,
+,,,,,,,Click on Next button.,,,
+Ushop_032,Place orders,"""Send via whatsapp"" button is not working.",Medium,,V.0.0.1,Testing,Enter valid shop URL and login to created shop.,It should send a whatsapp message when click on the button.,Do not send whatsapp message.,Done
+,,,,,,,Add items to cart.,,,
+,,,,,,,Click on cart.,,,
+,,,,,,,Click on next button.,,,
+,,,,,,,Enter order details and elivery details.,,,
+,,,,,,,Click on next button.,,,
+Ushop_033,Settings : General,Wrong notification for successful updation of the store details,Medium,,V.0.0.1,Testing,1. Enter valid URL,It should give a relevent notification., After saving the details it shows the notification as 'Items created successfully',Done
+,,,,,,,2. Login to the system.,,,
+,,,,,,,3.Click on Settings tab,,,
+,,,,,,,4.Go to store settings in general settings.,,,
+,,,,,,,5. Update store information.,,,
+,,,,,,,6.Click on save button.,,,
+Ushop_034,Reporting,Cancelled orers section do not represent the number of cancelled orders and the total amount of the orders.,Medium,,V.0.0.1,Testing,1. Enter valid URL,Cancelled Orders section should display the number of orders that has been cancelled.,That section shows 0 for both values.,To do
+,,,,,,,2.Login to the system.,,,
+,,,,,,,3.Click on Reporting tab.,,,
+,,,,,,,4.The Cancelled orders under order category.,,,
+Ushop_035,Place Orders,No of items appears in the cart do not tally with the total price in the cart,Medium,,V.0.0.1,Testing,Enter a valid shop URL and login to the shop.,The value that cart shows should be equal to the total value of items in the cart.,Cart shows the value of whole units of the store from selected items.,To do
+,,,,,,,Add an item to the cart.,,,
+Ushop_036,Landding Page,A UI issue in pricing,Low,,V.0.0.1,Testing,1. Enter valid URL,The value of enterprice package should mention the currency(LKR),The value of enterprice package do not mention the currency(LKR),To do
+,,,,,,,2.Login to the landing page,,,
+Ushop_037,Signin/ Signup,A UI issue of mobile number entering field,Low,,V.0.0.1,Testing,1. Enter valid URL,The placeholder test of mobile number entering field shoul show the required format as 7*********,The placeholder test of mobile number entering field shows 77 as fist digits.,To do
+,,,,,,,2.Click on signin/ signuop button,,,
+Ushop_038,Orders.,It allows to remove the items manually from the invoice as the empty order keep remain.,Medium,,V.0.0.1,Testing,Enter valid URL.,When all items removed the empty order should be removed from the order table.,Order table includes the order while remaining the order value empty. The invoice shows the delevery charges as the total amount.,To do
+,,,,,,,Login to ths system,,,
+,,,,,,,Click on orders,,,
+,,,,,,,Click on order status,,,
+,,,,,,,Remove the all items of the order.,,,
+,,,,,,,The invoice with only the elivery charges will remain,,,
+,,,,,,,Go back to orders,,,
+,,,,,,,The amount of order will be empty.,,,
+Ushop_039,Place orders,"Mobile no input fields can type special characters, letter and have not limited digits",Medium,,V.0.0.1,Testing,Enter valid shop URL,The mobile number fields shoul allow to enter only numbers. It shoul be limited the no of digits to 9/10,It allow to enter any number of digits and any special character to the mobile no field.,To do
+,,,,,,,Login to the store,,,
+,,,,,,,Add items to the cart,,,
+,,,,,,,Click on cart.,,,
+,,,,,,,Click next,,,
+,,,,,,,Provide contact details and delivery details.,,,
+Ushop_040,Orders, The amount of the order table do not tally with the total amount of invoice.,Low,,V.0.0.1,Testing,Enter valid URL,The amount of the order in order table should be tally with the total amount of invoice.,The amount before add the delivery charges appears in order table although the invoice has mentioned the delivery charges.,To do
+,,,,,,,Login to the system.,,,
+,,,,,,,Click on order tab.,,,
+,,,,,,,Select an order in order table and note the amount.,,,
+,,,,,,,Click on order status to get invoice.,,,
+,,,,,,,The total amount of invoice will not tally with the amount of order table. The delivery charges has not added to the table amount,,,
+Ushop_041,Manage Items,  Add items in bulk drop down menu is not working.,Low,,V.0.0.1,Testing,Enter valid URL,It should display a drop down menu or a further option to do.,No any functionality added there and the drop down menu is not working,To do
+,,,,,,,Login to the system,,,
+,,,,,,,Go to manage items,,,
+,,,,,,,Click on drop down menu beside the Add Item button,,,
+Ushop_042,Settings: Distances and prices,"Successful deletion of distances and prices gives the message ""discount deleted successfully""",Low,,V.0.0.1,Testing,Enter valid URL,It should display a relevant notification,"Displays the notification ""Discount deleted succcessfully""",To do
+,,,,,,,Login to the system.,,,
+,,,,,,,Click on settings.,,,
+,,,,,,,Click on distances and prices.,,,
+,,,,,,,Click on delete icon of distance and price.,,,
+,,,,,,,Click on delete button of the dialoge box.,,,
+Ushop_043,Orders, sub totals in invoice give two different values as the cart and catalog appears.,Low,,V.0.0.1,Testing,Enter valid URL,It should display the same value for subtotal ,Subtotals in invoice give two different values,To do
+,,,,,,,Login to the system.,,,
+,,,,,,,Click on orders,,,
+,,,,,,,Click on order status.,,,
+,,,,,,,Get the order invoice,,,
+Ushop_044,Reporting, The pie chart that represent the  availability of items do not represent the amounts correctly.,Medium,,V.0.0.1,Testing,Enter valid URL,,,To do
+,,,,,,,Login to the system,,,
+,,,,,,,Click on reporting.,,,
+,,,,,,,Check the pie chart represent the availability with values,,,
+Ushop_045,Place orders," It gives notification ""Discount code copied to clipboard"" when coping the bank details",Low,,V.0.0.1,Testing,Enter valid shop URL,It should display a relevant notification.," It gives notification ""Discount code copied to clipboard"" when coping the bank details",To do
+,,,,,,,Login to the store.,,,
+,,,,,,,Add items to the cart.,,,
+,,,,,,,Click on cart,,,
+,,,,,,,Click on next,,,
+,,,,,,,Enter order details and delivery details.,,,
+,,,,,,,Click on next,,,
+,,,,,,,Click on bank detais to copy,,,
+Ushop_046,Discount,Edit discount appears under create create discount title.,Low,,"V,0,0,1",Testing,Enter valid URL.,,,To do
+,,,,,,,Login to the system.,,,
+,,,,,,,Click on discount tab,,,
+,,,,,,,Click on discount name.,,,
+,,,,,,,The title of that page,,,
+Ushop_047,Place orders,Missing some saved data and applied discount amount when move to next page.,Medium,,"V,0,0,1",Testing,Enter valid shop URL,," When click on the back button of the place order page, it directs to previous page. But the applied discount has removed. When click next again it has not saved the contact details and delivery details entered previously.",To do
+,,,,,,,Login to the store,,,
+,,,,,,,Add items to the cart,,,
+,,,,,,,Click on cart.,,,
+,,,,,,,Paste discount code and apply,,,
+,,,,,,,Click next,,,
+,,,,,,,Provide contact details and delivery details.,,,
+,,,,,,,Click on back button,,,
+,,,,,,,The discount code applied and the discount amount has been removed.,,,
+,,,,,,,Click on next again.,,,
+,,,,,,,The entered contact details and delivery details has removed.,,,
+Ushop_048,Place order,The final pending amount of the order displays without deducting the discount amount.,Medium,,"V,0,0,1",Testing,Enter valid shop URL,,,To do
+,,,,,,,Login to the system,,,
+,,,,,,,add items to the cart.,,,
+,,,,,,,click on cart,,,
+,,,,,,,Apply discounts,,,
+,,,,,,,click next.,,,
+,,,,,,,Enter contact details,,,
+,,,,,,,enter elivery details selecting the bank transfer as the payment option.,,,
+,,,,,,,Click on next.,,,
+,,,,,,,Check the pending payment amount inclued with pending payment etails,,,
+Ushop_049,Manage item,"Edit item: successful edit of an item gives the notification ""Item created successfully.""
+",Low,,V.0.0.1,Testing,Enter valid URL,,,To do
+,,,,,,,Login to the system,,,
+,,,,,,,Click on item name.,,,
+,,,,,,,Edit item data,,,
+,,,,,,,Click on submit button.,,,
